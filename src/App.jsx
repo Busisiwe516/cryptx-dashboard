@@ -7,7 +7,7 @@ import Transactions from "./components/Transactions";
 export default function App() {
   return (
     <Layout>
-      <section className="grid gap-6 xl:grid-cols-2">
+      <section className="grid gap-6 xl:grid-cols-[3fr_2fr]">
         <StatCards />
         <PriceChart />
       </section>
