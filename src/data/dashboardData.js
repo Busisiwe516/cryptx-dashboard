@@ -1,20 +1,4 @@
-// STEP 1: all the dashboard content lives here. Update with the Figma values.
-export const stats = [
-  {
-    coin: "Bitcoin",
-    value: "$40,291",
-    change: "+0.25%",
-    color: "bg-orange-400",
-  },
-  {
-    coin: "Ethereum",
-    value: "$18,291",
-    change: "+0.18%",
-    color: "bg-blue-500",
-  },
-  { coin: "Ripple", value: "$8,291", change: "+0.12%", color: "bg-sky-500" },
-  { coin: "Tether", value: "$3,291", change: "+0.05%", color: "bg-green-500" },
-];
+// all the dashboard content lives here.
 
 export const market = [
   {
@@ -51,9 +35,37 @@ export const market = [
   },
 ];
 
-export const transactions = [
-  { name: "Ethereum", date: "12 Nov 2026", amount: "$24,102", up: true },
-  { name: "Bitcoin", date: "11 Nov 2026", amount: "$4,357", up: false },
-  { name: "Bitcoin", date: "10 Nov 2026", amount: "$54,764", up: false },
-  { name: "Litecoin", date: "09 Nov 2026", amount: "$14,265", up: false },
+export const stats = [
+  {
+    coin: "Bitcoin",
+    sym: "BTC",
+    value: "$40,291",
+    change: "+0.25%",
+    up: true,
+    color: "bg-orange-400",
+  },
+  {
+    coin: "Ethereum",
+    sym: "ETH",
+    value: "$18,291",
+    change: "+0.25%",
+    up: true,
+    color: "bg-blue-600",
+  },
+  {
+    coin: "Litecoin",
+    sym: "LTC",
+    value: "$8,291",
+    change: "+0.25%",
+    up: true,
+    color: "bg-blue-500",
+  },
+  {
+    coin: "Cardano",
+    sym: "ADA",
+    value: "$3,291",
+    change: "-0.25%",
+    up: false,
+    color: "bg-green-500",
+  },
 ];
