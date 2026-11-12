@@ -4,13 +4,16 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 
 export default function Layout({ children }) {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="flex min-h-screen bg-slate-100 font-sans text-slate-800">
-      <Sidebar open={menuOpen} onClose={() => setMenuOpen(false)} />
-      <div className="flex min-w-0 flex-1 flex-col">
-        <Header onMenu={() => setMenuOpen(true)} />
-        <main className="space-y-6 p-4 sm:p-8">{children}</main>
+      <Sidebar />
+      <div className="flex-1 flex flex-col min-w-0">
+        <div className="p-4 sm:p-6 pb-0">
+          <Header />
+        </div>
+        <main className="flex-1 p-4 sm:p-6 space-y-6 overflow-auto">
+          {children}
+        </main>
       </div>
     </div>
   );
