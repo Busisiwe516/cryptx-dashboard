@@ -1,29 +1,46 @@
 // Live Market table
-import LiveMarket from "./LiveMarket";
-import { market } from "../data/dashboardData";
+import { liveMarket } from "../data/dashboardData";
+import { LineChart, Line, ResponsiveContainer } from "recharts";
 
 export default function LiveMarket() {
   return (
-    <div className="rounded-2xl bg-white p-5 shadow-sm">
-      <h2 className="mb-4 font-semibold text-slate-900">Live Market</h2>
-      <ul className="divide-y divide-slate-100">
-        {market.map((m) => (
-          <li key={m.name} className="flex items-center gap-3 py-3">
-            <div className={`h-8 w-8 shrink-0 rounded-full ${m.color}`} />
-            <div className="min-w-0 flex-1">
-              <p className="text-sm font-medium">{m.name}</p>
-              <p className="text-xs text-slate-400">{m.sym}</p>
+    <div className="bg-white rounded-2xl p-5 shadow-sm">
+      <h3 className="font-bold text-sm mb-4">Live Market</h3>
+      <div className="space-y-5">
+        {liveMarket.map((coin) => (
+          <div key={coin.name} className="flex items-center justify-between">
+            <div className="flex items-center gap-3 w-[140px]">
+              <div
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold ${coin.color}`}
+              >
+                {coin.name[0]}
+              </div>
+              <div>
+                <p className="text-sm font-semibold">{coin.name}</p>
+                <p
+                  className={`text-xs ${coin.positive ? "text-green-500" : "text-red-500"}`}
+                >
+                  {coin.change}
+                </p>
+              </div>
             </div>
-            <p className="hidden text-sm text-slate-600 sm:block">{m.price}</p>
-            <Trendline up={m.up} />
-            <span
-              className={`w-14 text-right text-xs font-medium ${m.up ? "text-green-600" : "text-red-500"}`}
-            >
-              {m.change}
-            </span>
-          </li>
+            <p className="text-sm font-medium w-[100px]">{coin.price}</p>
+            <div className="w-20 h-8">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={coin.spark.map((v) => ({ v }))}>
+                  <Line
+                    type="monotone"
+                    dataKey="v"
+                    stroke={coin.positive ? "#3b82f6" : "#f87171"}
+                    strokeWidth={1.5}
+                    dot={false}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
