@@ -7,14 +7,17 @@ import Transactions from "./components/Transactions";
 export default function App() {
   return (
     <Layout>
-      <section className="grid gap-6 xl:grid-cols-[3fr_2fr]">
+      {/* TOP ROW */}
+      <div className="grid grid-cols-1 xl:grid-cols-[1.6fr_1fr] gap-6 mb-6">
         <StatCards />
         <PriceChart />
-      </section>
-      <section className="grid gap-6 xl:grid-cols-[3fr_2fr]">
+      </div>
+
+      {/* BOTTOM ROW */}
+      <div className="grid grid-cols-1 xl:grid-cols-[1.6fr_1fr] gap-6">
         <LiveMarket />
         <Transactions />
-      </section>
+      </div>
     </Layout>
   );
 }
