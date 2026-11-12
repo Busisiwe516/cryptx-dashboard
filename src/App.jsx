@@ -8,13 +8,13 @@ export default function App() {
   return (
     <Layout>
       {/* TOP ROW */}
-      <div className="grid grid-cols-1 xl:grid-cols-[1.6fr_1fr] gap-6 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-6 mb-6">
         <StatCards />
         <PriceChart />
       </div>
 
       {/* BOTTOM ROW */}
-      <div className="grid grid-cols-1 xl:grid-cols-[1.6fr_1fr] gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-6">
         <LiveMarket />
         <Transactions />
       </div>
