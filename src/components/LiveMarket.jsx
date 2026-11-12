@@ -1,11 +1,11 @@
 // Live Market table
-import Trendline from "./Trendline";
+import LiveMarket from "./LiveMarket";
 import { market } from "../data/dashboardData";
 
 export default function LiveMarket() {
   return (
     <div className="rounded-2xl bg-white p-5 shadow-sm">
-      <h2 className="mb-4 font-semibold text-slate-900">Trendline</h2>
+      <h2 className="mb-4 font-semibold text-slate-900">Live Market</h2>
       <ul className="divide-y divide-slate-100">
         {market.map((m) => (
           <li key={m.name} className="flex items-center gap-3 py-3">
