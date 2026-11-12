@@ -1,12 +1,11 @@
-import { Bitcoin, Gem, Coins, CircleDollarSign } from "lucide-react";
+import { Coins } from "lucide-react";
 
 const icons = {
-  Bitcoin,
-  Ethereum: Gem,
+  Bitcoin: Coins,
+  Ethereum: Coins,
   Litecoin: Coins,
-  Cardano: CircleDollarSign,
+  Cardano: Coins,
 };
-
 export default function StatCard({ coin, sym, value, change, up, color }) {
   const Icon = icons[coin] ?? Coins;
   return (
